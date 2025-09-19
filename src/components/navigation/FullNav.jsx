@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react"
 import gsap from 'gsap';
-import React, { useContext, useRef, useState, useEffect } from 'react'
+import  { useContext, useRef, useEffect } from 'react'
 import { NavbarContext } from '../../context/NavContext'
 
 
@@ -13,9 +13,6 @@ function FullNav() {
 
     function gsapAnimation() {
         const tl = gsap.timeline()
-        tl.to('.fullscreennav', {
-            display: 'block'
-        })
         tl.to('.stairing', {
             // delay: 0.2,
             height: '100%',
@@ -23,16 +20,19 @@ function FullNav() {
                 amount: -0.3
             }
         })
+        tl.to('.fullscreennav', {
+            display: 'block'
+        })
         tl.to('.link', {
             opacity: 1,
             rotateX: 0,
             stagger: {
-                amount: 0.3
+                amount: 0.2
             }
-        })
+        }, 'together')
         tl.to('.navlink', {
             opacity: 1
-        })
+        },'together')
     }
     function gsapAnimationReverse() {
         const tl = gsap.timeline()
@@ -42,18 +42,19 @@ function FullNav() {
             stagger: {
                 amount: 0.1
             }
-        })
+        }, 'same')
+        tl.to('.navlink', {
+            opacity: 0
+        }, 'same')
+        tl.to('.fullscreennav', {
+            delay : 0.3,
+            display: 'none',
+        }, 'same')
         tl.to('.stairing', {
             height: 0,
             stagger: {
                 amount: 0.1
             }
-        })
-        tl.to('.navlink', {
-            opacity: 0
-        })
-        tl.to('.fullscreennav', {
-            display: 'none',
         })
     }
 

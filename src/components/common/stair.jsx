@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { useRef } from "react"
 import { useLocation } from "react-router-dom";
 
-function stair({children}) {
+function Stair({children}) {
 
     const currentPath = useLocation().pathname;
      
@@ -46,21 +46,22 @@ function stair({children}) {
   return (
     <div>
 
-        <div ref={StairParent} className="h-screen w-full z-20 fixed" >
+        <div ref={StairParent} className="min-h-screen w-full z-20 fixed" >
             <div className="h-full w-full fixed flex ">
-            <div className=" stair h-full w-1/5 bg-black "></div>
-            <div className=" stair h-full w-1/5 bg-black "></div>
-            <div className=" stair h-full w-1/5 bg-black "></div>
-            <div className=" stair h-full w-1/5 bg-black "></div>
-            <div className=" stair h-full w-1/5 bg-black "></div>
+                <div className=" stair h-full w-1/5 bg-black "></div>
+                <div className=" stair h-full w-1/5 bg-black "></div>
+                <div className=" stair h-full w-1/5 bg-black "></div>
+                <div className=" stair h-full w-1/5 bg-black "></div>
+                <div className=" stair h-full w-1/5 bg-black "></div>
             </div>
         </div>
-
+ 
         <div ref={Pageref}>
             {children}
         </div>
+
     </div>
   )
 }
 
-export default stair
+export default Stair
