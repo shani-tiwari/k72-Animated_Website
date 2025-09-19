@@ -14,7 +14,8 @@ function Stair({children}) {
         const tl = gsap.timeline();
 
         tl.to(StairParent.current, {
-        display: 'block',
+         autoAlpha: 1, 
+         duration: 0
         });
 
         tl.from('.stair', {
@@ -32,7 +33,7 @@ function Stair({children}) {
         });
 
         tl.to(StairParent.current, {
-        display: 'none',
+         autoAlpha: 0, duration: 0
         });
 
         gsap.from(Pageref.current, {
@@ -46,8 +47,8 @@ function Stair({children}) {
   return (
     <div>
 
-        <div ref={StairParent} className="min-h-screen w-full z-20 fixed" >
-            <div className="h-full w-full fixed flex ">
+        <div ref={StairParent} className="h-screen w-full z-20 fixed" >
+            <div className="top-0 left-0 right-0 h-screen w-screen fixed flex ">
                 <div className=" stair h-full w-1/5 bg-black "></div>
                 <div className=" stair h-full w-1/5 bg-black "></div>
                 <div className=" stair h-full w-1/5 bg-black "></div>

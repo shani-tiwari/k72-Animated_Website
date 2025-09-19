@@ -21,7 +21,7 @@ function App() {
 
 
   return (
-    <div>
+   <>
       <div
         ref={circle}
         className="fixed h-2 w-2 bg-white rounded-full pointer-events-none z-50 transition-transform duration-200 ease-out"
@@ -33,7 +33,7 @@ function App() {
         <Route path='/Agence' element={<Agents/>}/>
         <Route path='/projects' element={<Projects/>}/> 
       </Routes>
-    </div>
+   </>
   )
 }
 
